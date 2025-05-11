@@ -1,13 +1,18 @@
 import com.lara.alisson.conversormoeda.api.CotacaoApi;
-import com.lara.alisson.conversormoeda.dto.CotacaoDto;
+import com.lara.alisson.conversormoeda.controller.ConversorMoeda;
+import com.lara.alisson.conversormoeda.controller.Menu;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner leitura = new Scanner(System.in);
+        CotacaoApi cotacaoApi = new CotacaoApi(); // Supondo que esta seja sua classe de API
 
-        CotacaoApi cotacaoApi = new CotacaoApi();
-        CotacaoDto taxa = cotacaoApi.buscarCotacao(); // Agora você pega o retorno
+        ConversorMoeda handler = new ConversorMoeda(leitura, cotacaoApi);
+        Menu menu = new Menu();
 
-        System.out.println("Valor Contado = "+ taxa.getCodeTarget() +" "+ taxa.getConversionRate(10)); // Mostra o valor correto
+        menu.exibirMenu();
+        handler.executarConversao();
     }
 }
-

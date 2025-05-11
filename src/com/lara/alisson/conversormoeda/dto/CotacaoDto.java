@@ -36,6 +36,7 @@ public class CotacaoDto {
         this.conversionRate = conversionRate;
     }
 
+
     @Override
     public String toString() {
         return "CotacaoDto{" +

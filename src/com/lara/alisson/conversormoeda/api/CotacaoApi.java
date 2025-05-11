@@ -20,21 +20,22 @@ public class CotacaoApi {
 
 
     private final String chave = "67a7d5801a928fa947990322";
-    private final String endereco = "https://v6.exchangerate-api.com/v6/"+chave+"/pair/BRL/JPY";
 
-    public CotacaoDto buscarCotacao() {
+
+    public CotacaoDto buscarCotacao(String valor1, String valor2) {
         try {
+            String endereco = "https://v6.exchangerate-api.com/v6/"+chave+"/pair/"+valor1+"/"+valor2;
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(endereco))
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             String json = response.body();
-            System.out.println("\nJson vindo da api: " + json);
+
 
             ConversionRates conversionRates = gson.fromJson(json, ConversionRates.class);
             CotacaoDto cotacaoDto = new CotacaoDto(conversionRates);
-            System.out.println("\nminha Classe DTO: " + cotacaoDto);
+
 
             return cotacaoDto;
 
