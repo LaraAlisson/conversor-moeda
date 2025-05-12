@@ -1,5 +1,7 @@
 package com.lara.alisson.conversormoeda.dto;
 
+import com.lara.alisson.conversormoeda.exception.entradaUsuarioInvalida;
+
 public class CotacaoDto {
     private String codeBase;
     private String codeTarget;
@@ -29,6 +31,12 @@ public class CotacaoDto {
     }
 
     public double getConversionRate(double valor) {
+
+
+        if (this.getCodeBase() == null) {
+            throw new entradaUsuarioInvalida("Código ISO da moeda de sua escolha não encontrado !");
+        }
+
         return conversionRate * valor;
     }
 

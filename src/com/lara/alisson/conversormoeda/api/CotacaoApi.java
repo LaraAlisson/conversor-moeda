@@ -40,8 +40,11 @@ public class CotacaoApi {
             return cotacaoDto;
 
         } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
+            System.out.println("Erro de conversão: não foi possível acessar a API. Verifique sua conexão ou tente novamente mais tarde.");
+            System.exit(1);
+
         }
+        return null;
     }
 
 }
