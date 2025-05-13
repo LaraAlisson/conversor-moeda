@@ -166,7 +166,8 @@ Entrada de dados e interação com o usuário via console.
 
 
 📦 Como Executar o Projeto
-git clone https://github.com/LaraAlisson/nome-do-repositorio.git
+git clone https://git@github.com:LaraAlisson/conversor-moeda.git
+
 cd nome-do-repositorio
 # Execute com sua IDE favorita (IntelliJ, VSCode) ou pelo terminal.
 
