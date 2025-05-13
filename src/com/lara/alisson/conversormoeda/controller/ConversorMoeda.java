@@ -137,9 +137,9 @@ public class ConversorMoeda {
 
 
             CotacaoDto cotacao = cotacaoApi.buscarCotacao(moedaOrigem, moedaDestino);
-            double valorConvertido = cotacao.getConversionRate(valor);
-
-            System.out.printf("\nValor cotado: %.2f %s equivalem a %.2f %s%n",
+            double valorConvertido = cotacao.converValor(valor);
+            System.out.println("\nCotação utilizada: 1 "+moedaOrigem +" = " + cotacao.getConversionRate() +" "+ moedaDestino );
+            System.out.printf("Valor convertido: %.2f %s equivalem a %.2f %s%n",
                     valor, moedaOrigem, valorConvertido, moedaDestino);
 
             //System.out.println(cotacao.getCodeBase());

@@ -30,8 +30,12 @@ public class CotacaoDto {
         this.codeTarget = codeTarget;
     }
 
-    public double getConversionRate(double valor) {
+    public double getConversionRate() {
 
+        return conversionRate;
+    }
+
+    public double converValor(double valor){
 
         if (this.getCodeBase() == null) {
             throw new entradaUsuarioInvalida("Código ISO da moeda de sua escolha não encontrado !");
