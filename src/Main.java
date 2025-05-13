@@ -11,7 +11,7 @@ public class Main {
         Menu menu = new Menu();
         String sair = "";
         while(true) {
-            System.out.println("Deseja Realizar uma cotação: " +
+            System.out.println("Você deseja simular um converção de moedas: " +
                     "\nY - Sim" +
                     "\nN - não");
 
